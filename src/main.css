@@ -1,15 +1,11 @@
 @media all {
     /*  Use tilda instead of the child selector to handle error
         case when several <summary> elements were specified */
-    summary:first-child ~ * {
-        display: none;
+    details:not([open]) > summary:first-child ~ * {
+        display: none!important;
     }
 
-    details[open] > * {
-        display: block;
-    }
-
-    details > summary:first-child {
+    details:not([open]) > summary:first-child {
         display: block;
     }
 
